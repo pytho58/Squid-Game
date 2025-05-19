@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Loading Animation with Music</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1 class="title">
+    <span class="highlight">Squid</span> Game..
+  </h1>
+
+  <!-- Music Play Button -->
+  <button onclick="playMusic()" class="music-button">🔊 Play Music</button>
+
+  <!-- Music Audio Element -->
+  <audio id="bgMusic" loop>
+    <source src="c:\Users\Subir\Music\youtube_KzpoQi7_4tA_audio.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Animation Grid -->
+  <div class="loader-grid">
+    
+    <!-- Circle -->
+    <div class="loader">
+      <svg viewBox="0 0 100 100">
+        <defs>
+          <path id="circlePath" d="M50,10 A40,40 0 1,1 49.9,10" />
+        </defs>
+        <use href="#circlePath" class="shape-path" />
+        <circle r="5" class="dot">
+          <animateMotion dur="2s" repeatCount="indefinite">
+            <mpath href="#circlePath" />
+          </animateMotion>
+        </circle>
+      </svg>
+    </div>
+
+    <!-- Triangle -->
+    <div class="loader">
+      <svg viewBox="0 0 100 100">
+        <defs>
+          <path id="trianglePath" d="M50,10 L90,90 L10,90 Z" />
+        </defs>
+        <use href="#trianglePath" class="shape-path" />
+        <circle r="5" class="dot">
+          <animateMotion dur="2s" repeatCount="indefinite">
+            <mpath href="#trianglePath" />
+          </animateMotion>
+        </circle>
+      </svg>
+    </div>
+
+    <!-- Square -->
+    <div class="loader">
+      <svg viewBox="0 0 100 100">
+        <defs>
+          <path id="squarePath" d="M10,10 H90 V90 H10 Z" />
+        </defs>
+        <use href="#squarePath" class="shape-path" />
+        <circle r="5" class="dot">
+          <animateMotion dur="2s" repeatCount="indefinite">
+            <mpath href="#squarePath" />
+          </animateMotion>
+        </circle>
+      </svg>
+    </div>
+
+  </div>
+
+  <script>
+    function playMusic() {
+      const audio = document.getElementById("bgMusic");
+      audio.play();
+    }
+  </script>
+
+</body>
+</html>
